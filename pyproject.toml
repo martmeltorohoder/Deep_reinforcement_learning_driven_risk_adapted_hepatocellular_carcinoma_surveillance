@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools==69.5.1", "wheel==0.43.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scdsmdp"
+version = "1.0.0"
+description = "Risk-adapted hepatocellular carcinoma surveillance"
+requires-python = ">=3.10,<3.12"
+dependencies = [
+  "numpy==1.26.4",
+  "pandas==2.2.2",
+  "PyYAML==6.0.1",
+  "scipy==1.13.0",
+  "torch==2.2.2"
+]
+
+[project.optional-dependencies]
+quality = ["mypy==1.10.0", "pytest==8.2.0", "ruff==0.4.4", "scipy-stubs==1.13.0.2"]
+
+[project.scripts]
+scdsmdp-train = "scdsmdp.entrypoints.train:main"
+scdsmdp-evaluate = "scdsmdp.entrypoints.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scdsmdp*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+disable_error_code = ["no-untyped-call"]
+
+[[tool.mypy.overrides]]
+module = "scipy.*"
+ignore_missing_imports = true

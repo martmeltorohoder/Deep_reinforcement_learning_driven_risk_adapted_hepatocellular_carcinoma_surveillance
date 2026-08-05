@@ -1,0 +1,15 @@
+name: scdsmdp
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10.14
+  - pytorch=2.2.2
+  - pytorch-cuda=12.1
+  - numpy=1.26.4
+  - pandas=2.2.2
+  - scipy=1.13.0
+  - pyyaml=6.0.1
+  - pytest=8.2.0
+

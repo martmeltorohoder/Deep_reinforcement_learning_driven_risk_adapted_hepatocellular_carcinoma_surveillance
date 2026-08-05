@@ -1,0 +1,41 @@
+seed: 0
+reward:
+  detection: 10.0
+  qaly: 1.0
+  cost: 0.01
+  burden: 5.0
+constraints:
+  missed_cancer: 0.01
+  interval_violation: 0.0
+  annual_budget: 3000.0
+  dual_learning_rate: 0.001
+  update_frequency: 100
+  initial_multiplier: 1.0
+model:
+  state_size: 14
+  action_size: 18
+  hidden_size: 256
+  hidden_layers: 3
+  quantile_basis: 64
+  quantile_samples: 64
+  cvar_level: 0.05
+training:
+  episodes: 680000
+  batch_size: 256
+  learning_rate: 0.0003
+  discount: 0.95
+  cql_weight: 1.0
+  target_rate: 0.005
+  replay_capacity: 2000000
+  learning_starts: 10000
+  train_frequency: 4
+  gradient_clip: 10.0
+  evaluation_frequency: 10000
+  evaluation_episodes: 50000
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+simulator:
+  horizon_years: 10
+  decisions_per_year: 4
+  economic_discount: 0.03
+  population_size: 1000000
+

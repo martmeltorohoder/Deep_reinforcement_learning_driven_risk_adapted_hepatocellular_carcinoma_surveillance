@@ -1,0 +1,4 @@
+NHANES 2017-2018 | https://wwwn.cdc.gov/nchs/nhanes/search/DataPage.aspx?Cycle=2017-2018 | Public-use files; individual components provide XPT downloads
+SEER Research Data | https://seer.cancer.gov/data-software/ | Access agreement and authenticated request required
+GBD Results | https://ghdx.healthdata.org/gbd-results-tool | IHME account and terms apply
+
